@@ -1,0 +1,240 @@
+nav {
+  background-color: #012944b1;
+  opacity: 100%;
+  backdrop-filter: blur(7px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 99999;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: auto;
+    gap: 100px;
+    padding-top: 10px;
+    .nav-link {
+        color: rgb(255, 255, 255);
+    }
+}
+
+body{
+    font-family: "Exo 2", sans-serif;
+    background-color: #ffffff;
+    color: white;
+}
+
+.Page-Heading{
+    background-color: hsl(214, 90%, 76%);
+    margin-top: 100px;
+    margin-left: -10px;
+    margin-right: -8px;
+    height: 100px;
+    align-content: center;
+}
+
+.nav-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo{
+    width: 100px;
+    height: auto;
+    mix-blend-mode: multiply;
+    position: fixed;
+    margin-left: 50px;
+    top: 15px;
+    /* Brighter, stronger glow + subtle blue rim */
+    filter: drop-shadow(0 0 14px rgba(255,255,255,0.95)) drop-shadow(0 0 5px rgba(255, 255, 255, 20));
+}
+
+h1 {
+    font-family: "Exo 2", sans-serif;
+    text-align: center;
+    color: #000b2e;
+    font-size: 2.5rem;
+}
+
+.nav-link:hover {
+    color: #4a90e2;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4a90e2;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(202, 234, 255, 0.7);
+    width: 150px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 99;
+    list-style: none;
+    display: flex;
+    text-align: center;
+    text-align: left;
+
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    flex-direction: column;
+  backdrop-filter: blur(7px);
+
+
+}
+
+.Contact-icon {
+    position: fixed;
+    bottom: 10px; /* Adjust based on your nav height */
+    right: 20px;
+    z-index: 1000;
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.Contact-icon:hover {
+    transform: scale(1.1);
+    border-radius: 500px 500px 1px 500px;
+
+}
+
+.Contact-icon-image {
+    width: 40px; /* Adjust icon size */
+    height: 40px;
+    object-fit: contain;
+}
+
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.7rem 0.5rem;
+    color: #333;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+    color: #4a90e2;
+}
+
+/* Add this hamburger menu button style */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 100000;
+}
+
+/* Add media queries for responsive design */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background-color: #023859;
+        width: 100%;
+        height: calc(100vh - 80px);
+        flex-direction: column;
+        gap: 20px;
+        transition: 0.3s;
+        margin-top: 0;
+        padding: 20px 0;
+    }
+
+    nav ul.active {
+        left: 0;
+    }
+
+    .nav-list {
+        position: relative;
+        left: 0;
+        transform: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 20px;
+    }
+
+    .Contact-icon {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Adjust font sizes for smaller screens */
+@media screen and (max-width: 480px) {
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .dropdown-menu a {
+        font-size: 14px;
+    }
+}
