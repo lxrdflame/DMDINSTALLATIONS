@@ -18,8 +18,13 @@ document.addEventListener("DOMContentLoaded", function()
         img.alt = 'DMD INSTALLATIONS';
         img.className = 'logo';
         brand.appendChild(img);
-
         nav.appendChild(brand);
+
+        const servicebtn = document.createElement('a');
+        servicebtn.className = 'service-btn';
+        servicebtn.href = '../../Contact-Page/HTML/Contact.html';
+        servicebtn.textContent = 'Request Service';
+        nav.appendChild(servicebtn);
 
         const ul = document.createElement('ul');
         ul.className = 'nav-list';
@@ -27,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function()
         const items = [
             { text: 'Home', href: '../../index.html' },
             { text: 'Services', href: '../../Services-Page/HTML/Services.html' },
-            { text: 'Projects', href: '../../Projects-Page/HTML/Projects.html' },
             { text: 'About', href: '../../About-Page/HTML/About.html' },
             { text: 'Contact', href: '../../Contact-Page/HTML/Contact.html' }
         ];
