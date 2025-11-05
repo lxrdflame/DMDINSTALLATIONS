@@ -6,32 +6,38 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             image: '../../Images/DSTV-image.jpg',
             title: 'DSTV Installation',
-            description: 'DSTV installation and maintenance including dish alignment, signal testing, and troubleshooting.'
+            description: 'DSTV installation and maintenance including dish alignment, signal testing, and troubleshooting.',
+            BookService: 'Request Service'
         },
         {
             image: '../../Images/CCTV-Image.png',
             title: 'CCTV Installation',
-            description: 'CCTV installation and maintenance services for residential and commercial properties.'
+            description: 'CCTV installation and maintenance services for residential and commercial properties.',
+            BookService: 'Request Service'
         },
         {
             image: '../../Images/Alarm-Image.png',
             title: 'Alarm Installation',
-            description: 'Alarm installation and monitoring services for residential and commercial properties.'
+            description: 'Alarm installation and monitoring services for residential and commercial properties.',
+            BookService: 'Request Service'
         },
         {
             image: '../../Images/Wifi-Image.png',
             title: 'Wifi Installation',
-            description: 'Professional wifi installation and optimization services for homes and businesses.'
+            description: 'Professional wifi installation and optimization services for homes and businesses.',
+            BookService: 'Request Service'
         },
         {
             image: '../../Images/Surround-Sound.png',
             title: 'Surround Sound Installation',
-            description: 'Custom surround sound system installation for an immersive audio experience.'
+            description: 'Custom surround sound system installation for an immersive audio experience.',
+            BookService: 'Request Service'
         },
         {
             image: '../../Images/Smart-Home-Image.png',
             title: 'Smart Home Installation',
-            description: 'Smart home device installation and integration for enhanced home automation.'
+            description: 'Smart home device installation and integration for enhanced home automation.',
+            BookService: 'Request Service'
         }
     ];
 
@@ -47,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div>
                 <h3>${service.title}</h3>
                 <p>${service.description}</p>
+                <button class="request-service-btn" onclick="location.href='../../Contact-Page/HTML/Contact.html'">${service.BookService}</button>
             </div>
         `;
 

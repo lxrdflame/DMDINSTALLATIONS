@@ -1,6 +1,18 @@
 document.addEventListener("DOMContentLoaded", function()
 {
 
+
+
+    const currentPage = window.location.pathname.split("/").pop(); // get file name (e.g. 'about.html')
+  const links = document.querySelectorAll("nav a");
+
+  links.forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
     (function(){
         const root = document.getElementById('nav-root');
 
@@ -14,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function()
 
         // Use image from images/INSTALLATION.png as the brand logo
         const img = document.createElement('img');
-        img.src = 'Images/INSTALLATIONS-2.png';
+        img.src = '../../Images/INSTALLATIONS-2.png';
         img.alt = 'DMD INSTALLATIONS';
         img.className = 'logo';
         brand.appendChild(img);
@@ -30,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function()
         ul.className = 'nav-list';
 
         const items = [
-            { text: 'Home', href: '../../index.html' },
-            { text: 'Services', href: '../../Services-Page/HTML/Services.html' },
-            { text: 'About', href: '../../About-Page/HTML/About.html' },
-            { text: 'Contact', href: '../../Contact-Page/HTML/Contact.html' }
+            { text: 'Home', href: '/index.html' },
+            { text: 'Services', href: '/Services-Page/HTML/Services.html' },
+            { text: 'About', href: '/About-Page/HTML/About.html' },
+            { text: 'Contact', href: '/Contact-Page/HTML/Contact.html' }
         ];
 
         items.forEach(it => {

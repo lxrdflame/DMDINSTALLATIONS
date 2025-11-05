@@ -25,6 +25,7 @@ nav ul {
     }
 }
 
+
 body{
     font-family: "Exo 2", sans-serif;
     background-color: #ffffff;
@@ -70,10 +71,22 @@ h1 {
 
 .nav-link:hover {
     color: #4a90e2;
+    background: 
+    linear-gradient(90deg,  #4a90e2 2px, transparent 2px) top left,
+    linear-gradient(180deg, #4a90e2 2px, transparent 2px) top left,
+    linear-gradient(270deg, #4a90e2 2px, transparent 2px) bottom right,
+    linear-gradient(0deg,   #4a90e2 2px, transparent 2px) bottom right;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-color: #00ccff00;
+  padding: 8px;
+  font-size: 1rem;
+}
+.nav-link a:active {
+    color: #4a90e2;
 }
 
 .nav-link::after {
-    content: '';
     position: absolute;
     width: 0;
     height: 2px;
@@ -94,39 +107,6 @@ h1 {
   transition: color 0.3s ease;
 }
 
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: rgba(202, 234, 255, 0.7);
-    width: 150px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 99;
-    list-style: none;
-    display: flex;
-    text-align: center;
-    text-align: left;
-
-}
-
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    flex-direction: column;
-  backdrop-filter: blur(7px);
-
-
-}
 
 .Contact-icon {
     position: fixed;
@@ -153,20 +133,6 @@ h1 {
     width: 40px; /* Adjust icon size */
     height: 40px;
     object-fit: contain;
-}
-
-
-.dropdown-menu a {
-    display: block;
-    padding: 0.7rem 0.5rem;
-    color: #333;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-}
-
-.dropdown-menu a:hover {
-    background-color: #f5f5f5;
-    color: #4a90e2;
 }
 
 /* Add this hamburger menu button style */
