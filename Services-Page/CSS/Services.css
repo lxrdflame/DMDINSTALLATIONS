@@ -11,6 +11,7 @@
     --color-border: rgb(0, 238, 255)
 }
 
+
 .services-container {
   display: flex;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -33,7 +34,7 @@ main{
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
-  width: 100%;
+  width: 40%;
   height: 40%;
   font-size: large;
   border-top-right-radius: 100px;
@@ -129,4 +130,17 @@ padding: 0.5px;
 
 .toggle-sidebar-btn{
     border: black 2px solid;
+}
+
+.request-service-btn{
+    margin-left: 80px;
+    padding: 10px 15px;
+    background-color: #839af6;
+    color: white;
+    border: #000000 2px solid;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: background-color 0.3s;
+    box-shadow: lightblue 0 0 10px;
 }

@@ -1,80 +1,70 @@
-document.addEventListener("DOMContentLoaded", function() {
-    (function(){
-        const root = document.getElementById('nav-root');
-        if (!root) return; // Safety check
+document.addEventListener("DOMContentLoaded", function () {
+  (function () {
+    const root = document.getElementById("nav-root");
+    if (!root) return; // Safety check
 
-        const nav = document.createElement('nav');
-        nav.className = 'navbar';
-        nav.setAttribute('aria-label','Main Navigation');
+    const nav = document.createElement("nav");
+    nav.className = "navbar";
+    nav.setAttribute("aria-label", "Main Navigation");
 
-        const brand = document.createElement('a');
-        brand.className = 'brand';
-        brand.href = '/'; // Root home page
+    // --- Brand Logo ---
+    const brand = document.createElement("a");
+    brand.className = "brand";
+    brand.href = "../../index.html"; // link to home
 
-        // Use image from images/INSTALLATION.png as the brand logo
-        const img = document.createElement('img');
-        img.src = '../../Images/INSTALLATIONS-2.png';
-        img.alt = 'DMD INSTALLATIONS';
-        img.className = 'logo';
-        brand.appendChild(img);
-        nav.appendChild(brand);
+    const img = document.createElement("img");
+    img.src = "../../Images/INSTALLATIONS-2.png";
+    img.alt = "DMD INSTALLATIONS";
+    img.className = "logo";
+    brand.appendChild(img);
+    nav.appendChild(brand);
 
-        const servicebtn = document.createElement('a');
-        servicebtn.className = 'service-btn';
-        servicebtn.href = '/DMDInstallations/Contact-Page/HTML/Contact.html';
-        servicebtn.textContent = 'Request Service';
-        nav.appendChild(servicebtn);
+    // --- Service Button ---
+    const servicebtn = document.createElement("a");
+    servicebtn.className = "service-btn";
+    servicebtn.href = "../../Contact-Page/HTML/Contact.html";
+    servicebtn.textContent = "Request Service";
+    nav.appendChild(servicebtn);
 
-        const ul = document.createElement('ul');
-        ul.className = 'nav-list';
+    // --- Navigation Links ---
+    const ul = document.createElement("ul");
+    ul.className = "nav-list";
 
-        const items = [
-            { text: 'Home', href: '../../index.html' },
-            { text: 'Services', href: '../../Services-Page/HTML/Services.html' },
-            { text: 'About', href: '../../About-Page/HTML/About.html' },
-            { text: 'Contact', href: '../../Contact-Page/HTML/Contact.html' }
-        ];
+    const items = [
+      { text: "Home", href: "../../index.html" },
+      { text: "Services", href: "../../Services-Page/HTML/Services.html" },
+      { text: "About", href: "../../About-Page/HTML/About.html" },
+      { text: "Contact", href: "../../Contact-Page/HTML/Contact.html" },
+    ];
 
-        items.forEach(it => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.className = 'nav-link';
-            a.href = it.href;
-            a.textContent = it.text;
-            li.appendChild(a);
-            ul.appendChild(li);
-        });
+    items.forEach((it) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.className = "nav-link";
+      a.href = it.href;
+      a.textContent = it.text;
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
 
-        nav.appendChild(ul);
-        root.appendChild(nav);
+    nav.appendChild(ul);
+    root.appendChild(nav);
 
-        // Active link handling - compare with current page
-        const currentPage = window.location.pathname;
-        
-        // Handle home page special case
-        const normalizedCurrentPage = currentPage === '/' || currentPage.endsWith('/index.html') 
-            ? '/index.html' 
-            : currentPage;
-        
-        nav.querySelectorAll('.nav-link').forEach(link => {
-            const linkPath = link.getAttribute('href');
-            if (normalizedCurrentPage === linkPath || 
-                (normalizedCurrentPage === '/' && linkPath === '/index.html')) {
-                link.classList.add('active');
-            }
-        });
+    // --- Highlight current page ---
+    const currentFile = window.location.pathname.split("/").pop() || "index.html";
 
-        // Basic click handling for mobile menu (if you have one)
-        nav.addEventListener('click', (e) => {
-            const link = e.target.closest('.nav-link');
-            if (!link) return;
-            
-            // If you have a mobile menu toggle, close it here
-            // const toggle = document.querySelector('[aria-expanded]');
-            // if (toggle) {
-            //     toggle.setAttribute('aria-expanded', 'false');
-            //     nav.classList.remove('open');
-            // }
-        });
-    })();
+    nav.querySelectorAll(".nav-link").forEach((link) => {
+      const linkFile = link.getAttribute("href").split("/").pop();
+      if (linkFile === currentFile) {
+        link.classList.add("active");
+        link.style.pointerEvents = "none";
+        link.style.cursor = "default";
+        link.style.boxShadow = "inset 2px 3px 7px #427cafff, inset -3px -3px 7px rgba(0, 0, 0, 0.47)"; 
+        link.style.padding = "10px 15px";
+        link.style.borderRadius = "50px";
+        link.style.backgroundColor = "transparent";
+        link.style.color = "#839af6";
+      }
+    });
+  })();
 });
