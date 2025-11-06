@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Use image from images/INSTALLATION.png as the brand logo
         const img = document.createElement('img');
-        img.src = '/DMDInstallations/Images/INSTALLATIONS-2.png';
+        img.src = '../../Images/INSTALLATIONS-2.png';
         img.alt = 'DMD INSTALLATIONS';
         img.className = 'logo';
         brand.appendChild(img);
@@ -21,19 +21,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const servicebtn = document.createElement('a');
         servicebtn.className = 'service-btn';
-        servicebtn.href = '/Contact-Page/HTML/Contact.html';
+        servicebtn.href = '/DMDInstallations/Contact-Page/HTML/Contact.html';
         servicebtn.textContent = 'Request Service';
         nav.appendChild(servicebtn);
 
         const ul = document.createElement('ul');
         ul.className = 'nav-list';
 
-        // Use absolute paths from root for consistency
         const items = [
-            { text: 'Home', href: '/DMDInstallations/index.html' },
-            { text: 'Services', href: '/DMDInstallations/Services-Page/HTML/Services.html' },
-            { text: 'About', href: '/DMDInstallations/About-Page/HTML/About.html' },
-            { text: 'Contact', href: '/DMDInstallations/Contact-Page/HTML/Contact.html' }
+            { text: 'Home', href: '../../index.html' },
+            { text: 'Services', href: '../../Services-Page/HTML/Services.html' },
+            { text: 'About', href: '../../About-Page/HTML/About.html' },
+            { text: 'Contact', href: '../../Contact-Page/HTML/Contact.html' }
         ];
 
         items.forEach(it => {
