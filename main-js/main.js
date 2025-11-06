@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Use absolute paths from root for consistency
         const items = [
-            { text: 'Home', href: '/index.html' },
-            { text: 'Services', href: '/Services-Page/HTML/Services.html' },
-            { text: 'About', href: '/About-Page/HTML/About.html' },
-            { text: 'Contact', href: '/Contact-Page/HTML/Contact.html' }
+            { text: 'Home', href: '/DMDInstallations/index.html' },
+            { text: 'Services', href: '/DMDInstallations/Services-Page/HTML/Services.html' },
+            { text: 'About', href: '/DMDInstallations/About-Page/HTML/About.html' },
+            { text: 'Contact', href: '/DMDInstallations/Contact-Page/HTML/Contact.html' }
         ];
 
         items.forEach(it => {
