@@ -1,20 +1,7 @@
-document.addEventListener("DOMContentLoaded", function()
-{
-
-
-
-    const currentPage = window.location.pathname.split("/").pop(); // get file name (e.g. 'about.html')
-  const links = document.querySelectorAll("nav a");
-
-  links.forEach(link => {
-    const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-    }
-  });
-
+document.addEventListener("DOMContentLoaded", function() {
     (function(){
         const root = document.getElementById('nav-root');
+        if (!root) return; // Safety check
 
         const nav = document.createElement('nav');
         nav.className = 'navbar';
@@ -22,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function()
 
         const brand = document.createElement('a');
         brand.className = 'brand';
-        brand.href = '#';
+        brand.href = '/'; // Root home page
 
         // Use image from images/INSTALLATION.png as the brand logo
         const img = document.createElement('img');
@@ -34,13 +21,14 @@ document.addEventListener("DOMContentLoaded", function()
 
         const servicebtn = document.createElement('a');
         servicebtn.className = 'service-btn';
-        servicebtn.href = '../../Contact-Page/HTML/Contact.html';
+        servicebtn.href = '/Contact-Page/HTML/Contact.html';
         servicebtn.textContent = 'Request Service';
         nav.appendChild(servicebtn);
 
         const ul = document.createElement('ul');
         ul.className = 'nav-list';
 
+        // Use absolute paths from root for consistency
         const items = [
             { text: 'Home', href: '/index.html' },
             { text: 'Services', href: '/Services-Page/HTML/Services.html' },
@@ -54,10 +42,6 @@ document.addEventListener("DOMContentLoaded", function()
             a.className = 'nav-link';
             a.href = it.href;
             a.textContent = it.text;
-            a.addEventListener('click', () => {
-                toggle.setAttribute('aria-expanded', 'false');
-                nav.classList.remove('open');
-            });
             li.appendChild(a);
             ul.appendChild(li);
         });
@@ -65,14 +49,33 @@ document.addEventListener("DOMContentLoaded", function()
         nav.appendChild(ul);
         root.appendChild(nav);
 
+        // Active link handling - compare with current page
+        const currentPage = window.location.pathname;
         
-        // basic active-link handling
+        // Handle home page special case
+        const normalizedCurrentPage = currentPage === '/' || currentPage.endsWith('/index.html') 
+            ? '/index.html' 
+            : currentPage;
+        
+        nav.querySelectorAll('.nav-link').forEach(link => {
+            const linkPath = link.getAttribute('href');
+            if (normalizedCurrentPage === linkPath || 
+                (normalizedCurrentPage === '/' && linkPath === '/index.html')) {
+                link.classList.add('active');
+            }
+        });
+
+        // Basic click handling for mobile menu (if you have one)
         nav.addEventListener('click', (e) => {
             const link = e.target.closest('.nav-link');
             if (!link) return;
-            nav.querySelectorAll('.nav-link').forEach(x => x.classList.remove('active'));
-            link.classList.add('active');
+            
+            // If you have a mobile menu toggle, close it here
+            // const toggle = document.querySelector('[aria-expanded]');
+            // if (toggle) {
+            //     toggle.setAttribute('aria-expanded', 'false');
+            //     nav.classList.remove('open');
+            // }
         });
     })();
-
 });
