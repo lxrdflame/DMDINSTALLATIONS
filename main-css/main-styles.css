@@ -1,5 +1,5 @@
 nav {
-  background-color: #012944b1;
+  background-color: #08395a;
   opacity: 100%;
   backdrop-filter: blur(7px);
   top: 0;
@@ -28,7 +28,8 @@ nav ul {
 
 body{
     font-family: "Exo 2", sans-serif;
-    background-color: #ffffff;
+       background: linear-gradient(135deg, #234164 0%, #b2cff0 100%);
+
     color: white;
 }
 
@@ -39,6 +40,7 @@ body{
     margin-right: -8px;
     height: 100px;
     align-content: center;
+    border-radius: 0 0 150px 150px;
 }
 
 .nav-list{

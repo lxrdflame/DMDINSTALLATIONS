@@ -30,7 +30,7 @@ form {
     border-radius: 10px;
     background: linear-gradient(280deg, #66a2e6 0%, #152e4c 100%);
     box-shadow: 0 0 15px #000000b0;
-
+    margin-top: -30px;
 }
 .service-form{
     background: linear-gradient(135deg, #66a2e6 0%, #152e4c 100%);
@@ -43,10 +43,6 @@ align-items: center;
   margin-top: 50px;
     box-shadow: 0 0 15px #000000b0;
 
-}
-
-body{
-    background: linear-gradient(135deg, #234164 0%, #b2cff0 100%);
 }
 
 
@@ -85,7 +81,7 @@ button {
 .form-group select{
     border-radius: 50px;
   border: rgba(20, 71, 102, 0.653) 2px solid;
-  box-shadow: inset 1px 1px 2px #5d646a, inset -1px -1px 5px rgb(255, 255, 255);
+  box-shadow: inset 1px 1px 2px #5d646aad, inset -1px -1px 5px rgba(102, 142, 174, 0.449);
   background: transparent;
   color: rgb(0, 0, 0);
   padding: 6px 10px;
@@ -93,3 +89,16 @@ button {
   
 }
 
+.contact-group a{
+    color: white;
+    text-decoration: none;
+}
+
+.contact-group li {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+.contact-group a:hover{
+
+}

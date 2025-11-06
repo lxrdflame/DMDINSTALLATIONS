@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { text: "Home", href: "../../index.html" },
       { text: "Services", href: "../../Services-Page/HTML/Services.html" },
       { text: "About", href: "../../About-Page/HTML/About.html" },
-      { text: "Contact", href: "../../Contact-Page/HTML/Contact.html" },
+      { text: "Contact", href: "../../Booking-Page/HTML/Booking-Page.html" },
     ];
 
     items.forEach((it) => {
