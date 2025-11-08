@@ -11,48 +11,47 @@
     --color-border: rgb(0, 0, 0); /* lighter border color */
 }
 
+/* Base Mobile Styles */
 .content {
-    padding: 73px 0px;
+    padding: 40px 15px;
 }
 
 .Company-name {
-    font-size: 6rem;
-    color: black; /* primary */
-    margin-bottom: 20px;
-  font-optical-sizing: auto;
-  font-style: normal;
-  text-align: center;
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 15px;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-align: center;
+    line-height: 1.2;
 }
 
-h2{
-    font-size: 1.2rem;
-    color: var(--text-dark); /* dark text */
-    margin-bottom: 40px;
-  text-align: center;
-    
+h2 {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.4;
 }
 
 .Name-and-Slogan {
     flex: 1;
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--primary-inner) 100%);
-    padding: 10rem;
-    margin-left: -8px;
-    margin-right: -8px;
+    padding: 4rem 1.5rem;
+    margin: 0 -15px;
     text-align: center;
 }
 
-
-.services-list img{
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    margin: 10px;
-    border-radius: 20px;
-    display: inline-block;
-    vertical-align: middle;
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Adjust spacing between list and image */
+.subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: var(--neutral-text);
+    line-height: 1.5;
 }
 
 .Image-container {
@@ -60,111 +59,109 @@ h2{
     width: 100%;
     text-align: center;
     background-color: transparent;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    
-    
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
-.subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    color: var(--neutral-text); /* neutral text */
+.services-list img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 15px;
+    display: block;
 }
 
 .carousel-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 15px;
-    background: var(--color-primary-03); /* subtle bluish surface */
+    border-radius: 10px;
+    background: var(--color-primary-03);
     position: relative;
     z-index: 0;
     transform: translateZ(0);
-    
-    
 }
 
 .carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    height: 400px;
+    height: 300px;
 }
-
 
 .carousel-item {
     min-width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
 }
 
 .description-panel {
     flex: 1;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
     background: #FFFFFF;
-    color: var(--neutral-text); /* neutral text */
+    color: var(--neutral-text);
+    order: 2;
 }
 
 .image-title {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: var(--color-primary); /* primary */
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--color-primary);
     font-weight: 600;
-}
-
-.More-btn{
-    box-shadow: inset 2px 3px 7px #427cafff, inset -3px -3px 7px rgb(255, 255, 255);
-    width: 80px;
-    background: rgba(111, 207, 255, 0.36);
-    padding: 10px;
-    border-radius: 40px;
-    margin-left: 300px;   
-    margin-top: 100px; 
-    border: #c3f4f957;
+    text-align: center;
 }
 
 .image-description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: var(--muted-dark); /* muted dark */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: var(--muted-dark);
+    text-align: center;
 }
 
 .image-panel {
-    flex: 1.5;
+    flex: 1;
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     padding: 0px;
+    order: 1;
+    min-height: 200px;
 }
 
+.More-btn {
+    box-shadow: inset 2px 3px 7px #427cafff, inset -3px -3px 7px rgb(255, 255, 255);
+    width: 70px;
+    background: rgba(111, 207, 255, 0.36);
+    padding: 8px;
+    border-radius: 40px;
+    margin: 20px auto;
+    border: #c3f4f957;
+    font-size: 0.9rem;
+}
 
 .carousel-controls {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    gap: 15px;
+    margin-top: 15px;
+    gap: 10px;
 }
 
 .carousel-btn {
     background: rgba(0, 247, 255, 0.368);
     border: none;
-    color: var(--accent-warm); /* warm accent for controls */
-    width: 50px;
-    height: 50px;
+    color: var(--accent-warm);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
@@ -172,46 +169,364 @@ h2{
     align-items: center;
     justify-content: center;
     box-shadow: inset 2px 3px 7px #427cafff, inset -3px -3px 7px rgb(255, 255, 255);
-
 }
 
 .indicators {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
-    gap: 10px;
-    
+    margin-top: 12px;
+    gap: 8px;
 }
 
 .indicator {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: inset 2px 3px 7px #427cafff, inset -3px -3px 7px rgb(255, 255, 255);
-
 }
 
 .indicator.active {
-    background: var(--color-primary); /* primary active */
+    background: var(--color-primary);
     transform: scale(1.2);
 }
 
-h2 a{
+h2 a {
     text-decoration: none;
-    font-size: 50px;
+    font-size: 1.2rem;
     color: #FFFFFF;
     box-shadow: inset 2px 3px 7px rgb(254, 255, 255), inset -3px -3px 7px rgb(21, 21, 22);
-    padding: 12px 20px;
+    padding: 10px 16px;
     border-radius: 50px;
+    display: inline-block;
+    margin: 10px 0;
 }
 
-h2 a:hover{
+h2 a:hover {
     box-shadow: inset 2px 3px 7px rgb(2, 2, 2), inset -3px -3px 7px rgb(255, 255, 255);
-    padding: 12px 20px;
-    border-radius: 50px;
-
 }
 
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .content {
+        padding: 60px 30px;
+    }
 
+    .Company-name {
+        font-size: 4rem;
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 35px;
+    }
+
+    .Name-and-Slogan {
+        padding: 6rem 3rem;
+        margin: 0 -30px;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.8rem;
+        max-width: 80%;
+    }
+
+    .Image-container {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .carousel-container {
+        max-width: 90%;
+        border-radius: 12px;
+    }
+
+    .carousel {
+        height: 350px;
+    }
+
+    .carousel-item {
+        flex-direction: row;
+    }
+
+    .description-panel {
+        order: 1;
+        padding: 25px;
+    }
+
+    .image-panel {
+        order: 2;
+        min-height: auto;
+    }
+
+    .image-title {
+        font-size: 1.6rem;
+        text-align: left;
+    }
+
+    .image-description {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .More-btn {
+        width: 75px;
+        margin: 30px 0 0 0;
+        font-size: 0.95rem;
+    }
+
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    h2 a {
+        font-size: 1.5rem;
+        padding: 12px 18px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .content {
+        padding: 73px 50px;
+    }
+
+    .Company-name {
+        font-size: 5rem;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+    }
+
+    .Name-and-Slogan {
+        padding: 8rem 4rem;
+        margin: 0 -50px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+    }
+
+    .Image-container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .carousel-container {
+        max-width: 1000px;
+        border-radius: 15px;
+    }
+
+    .carousel {
+        height: 400px;
+    }
+
+    .description-panel {
+        padding: 30px;
+    }
+
+    .image-title {
+        font-size: 1.8rem;
+    }
+
+    .image-description {
+        font-size: 1.1rem;
+    }
+
+    .More-btn {
+        width: 80px;
+        margin-left: 300px;
+        margin-top: 100px;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .indicators {
+        margin-top: 15px;
+        gap: 10px;
+    }
+
+    .indicator {
+        width: 12px;
+        height: 12px;
+    }
+
+    h2 a {
+        font-size: 1.8rem;
+        padding: 12px 20px;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+    .content {
+        padding: 73px 100px;
+    }
+
+    .Company-name {
+        font-size: 6rem;
+    }
+
+    .Name-and-Slogan {
+        padding: 10rem 5rem;
+        margin: 0 -100px;
+    }
+
+    .carousel-container {
+        max-width: 1200px;
+    }
+
+    .carousel {
+        height: 450px;
+    }
+}
+
+/* Small Mobile Adjustments */
+@media (max-width: 480px) {
+    .content {
+        padding: 30px 10px;
+    }
+
+    .Company-name {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+
+    h2 {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .Name-and-Slogan {
+        padding: 3rem 1rem;
+        margin: 0 -10px;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .Image-container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .carousel {
+        height: 250px;
+    }
+
+    .description-panel {
+        padding: 15px;
+    }
+
+    .image-title {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .image-description {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    .More-btn {
+        width: 60px;
+        padding: 6px;
+        font-size: 0.8rem;
+        margin: 15px auto;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    h2 a {
+        font-size: 1rem;
+        padding: 8px 14px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+    .Company-name {
+        font-size: 1.8rem;
+    }
+
+    .Name-and-Slogan {
+        padding: 2rem 0.5rem;
+    }
+
+    .carousel {
+        height: 220px;
+    }
+
+    .description-panel {
+        padding: 12px;
+    }
+
+    .image-title {
+        font-size: 1.1rem;
+    }
+
+    .image-description {
+        font-size: 0.8rem;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    .carousel {
+        transition: none;
+    }
+    
+    .carousel-btn,
+    .indicator {
+        transition: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .carousel-btn,
+    .indicator,
+    .More-btn,
+    h2 a {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    .Name-and-Slogan {
+        padding: 3rem 2rem;
+    }
+    
+    .carousel {
+        height: 250px;
+    }
+}

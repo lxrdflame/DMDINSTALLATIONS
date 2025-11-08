@@ -14,11 +14,14 @@
 
     <link rel="stylesheet" href="../../main-css/main-styles.css">
     <link rel="stylesheet" href="../CSS/Services.css">
+    <link rel="stylesheet" href="../CSS/Service-secondary-style.css">
     <script src="../../main-js/main.js"></script>
     <script src="../Scripts/Services.js"></script>
+    <script src="../Scripts/Services-Main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
     <script src="../../GSAP-Animations-JS/Main-GSAP.js"></script>
+    <script src="../Scripts/SearchFilter.js"></script>
 </head>
 <body>
     <header>
@@ -26,13 +29,42 @@
        </header>
 
        <div class="Page-Heading"><h1>Our Services</h1></div>
-      
+        <input type="text" id="serviceSearch" placeholder="Search for a service..." class="service-search" >
+
+       <div class="sidebar">
+        <aside class="services-nav-aside" aria-label="Services Navigation">
+
+        <button class="toggle-sidebar-btn">&#9776;</button>
+        <ul>
+            <li><h2>Services</h2></li>
+            <li><hr></li>
+            <li><a href="../Service-pages/DSTV-page.html">DSTV Installation</a></li>
+            <li><hr></li>
+            <li><a href="../Service-pages/CCTV-page.html">CCTV Installation</a></li>
+            <li><hr></li>
+            <li><a href="../Service-pages/Wifi-page.html">Wi-Fi Services</a></li>
+            <li><hr></li>
+            <li><a href="../Service-pages/Alarm-page.html">Alarm Services</a></li>
+            <li><hr></li>
+            <li><a href="../Service-pages/SoundSystem-page.html">Sound Systems</a></li>
+            <li><hr></li>
+        </ul>
+       </aside>
+       </div>
        <main>
-        
         <div id="servicesRoot" class="services-container" aria-live="polite"></div>
+        
        </main>
+      
+<section id="tech-news">
+  <h2>Latest Tech News</h2>
+  <div id="newsContainer" class="news-container">
+    <p>Loading latest tech news...</p>
+  </div>
+</section>
 
-
+      
+    
        <footer>
            <p>&copy; 2023 Your Company Name. All rights reserved.</p>
        </footer>

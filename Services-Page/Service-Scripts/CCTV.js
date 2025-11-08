@@ -1,88 +1,90 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const servicesRoot = document.getElementById('CCTVsRoot');
+    const servicesRoot = document.getElementById('DSTVsRoot');
     if (!servicesRoot) return;
 
-    const services = [
-        {
-            image: '../../Images/CCTV-Dome.jpg',
-            PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
-            title: 'Dome CCTV Camera',
-            description:
-                'Compact and discreet — ideal for indoor surveillance in homes, offices, or retail spaces. Dome cameras offer wide coverage and vandal resistance.',
-            BookService: 'Request Installation'
-        },
-        {
-            image: '../../Images/CCTV-Bullet.jpg',
-            PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
-            title: 'Bullet CCTV Camera',
-            description:
-                'Perfect for outdoor monitoring — weatherproof and designed for long-range visibility, bullet cameras act as a strong visual deterrent.',
-            BookService: 'Request Installation'
-        },
-        {
-            image: '../../Images/CCTV-PTZ.jpg',
-            PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
-            title: 'PTZ (Pan-Tilt-Zoom) Camera',
-            description:
-                'High-end cameras with motorized control — pan, tilt, and zoom remotely for flexible surveillance of large areas such as parking lots or warehouses.',
-            BookService: 'Request Installation'
-        },
-        {
-            image: '../../Images/CCTV-IP.jpg',
-            PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
-            title: 'IP CCTV Camera',
-            description:
-                'Network-based cameras providing crystal-clear HD video and remote access through mobile apps — ideal for modern security systems.',
-            BookService: 'Request Installation'
-        },
-        {
-            image: '../../Images/CCTV-Wireless.jpg',
-            PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
-            title: 'Wireless CCTV Camera',
-            description:
-                'Easy to install and manage — wireless cameras eliminate cable clutter while providing secure, high-quality video transmission.',
-            BookService: 'Request Installation'
-        },
-        {
-            image: '../../Images/CCTV-NightVision.jpg',
-            PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
-            title: 'Infrared Night Vision Camera',
-            description:
-                'Designed for 24/7 protection — these cameras capture clear footage even in complete darkness using infrared LED technology.',
-            BookService: 'Request Installation'
-        },
-        {
-            image: '../../Images/CCTV-DVR.jpg',
-            PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
-            title: 'CCTV DVR System',
-            description:
-                'A complete digital video recorder system for analog cameras — record, store, and replay footage with advanced playback features.',
-            BookService: 'Request Installation'
-        },
-        {
-            image: '../../Images/CCTV-NVR.jpg',
-            PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
-            title: 'CCTV NVR System',
-            description:
-                'For IP camera setups — record high-definition video directly over your network with superior image quality and remote access.',
-            BookService: 'Request Installation'
-        },
-        {
-            image: '../../Images/CCTV-SmartCam.jpg',
-            PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
-            title: 'Smart Wi-Fi Camera',
-            description:
-                'Smart home security made simple — connect via Wi-Fi, get motion alerts on your phone, and monitor your space in real-time from anywhere.',
-            BookService: 'Request Installation'
-        }
-    ];
+   const services = [
+  {
+    image: '../../Images/DSTV-compact.jpg',
+    PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
+    title: 'DStv Compact',
+    description:
+      'Enjoy a wide selection of entertainment, movies, sports, and lifestyle channels including Mzansi Magic, SuperSport Variety, and more — perfect for family viewing at an affordable price.',
+    BookService: 'Request Service'
+  },
+  {
+    image: '../../Images/DSTV-Access.jpg',
+    PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
+    title: 'DStv Access',
+    description:
+      'An affordable package offering essential entertainment, local channels, news, and educational content — ideal for basic viewing needs.',
+    BookService: 'Request Service'
+  },
+  {
+    image: '../../Images/DSTV-OpenView.jpg',
+    PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
+    title: 'OpenView HD',
+    description:
+      'A free-to-view satellite TV service offering over 20 local and international channels with no monthly fees — once-off installation and you’re set for good.',
+    BookService: 'Request Service'
+  },
+  {
+    image: '../../Images/DSTV-Explora.jpg',
+    PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
+    title: 'DStv Explora',
+    description:
+      'Experience next-level entertainment with the DStv Explora decoder — pause, rewind, and record live TV, watch Catch Up, and rent the latest movies with BoxOffice.',
+    BookService: 'Request Service'
+  },
+  {
+    image: '../../Images/DSTV-Explora-Ultra.jpg',
+    PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
+    title: 'DStv Explora Ultra',
+    description:
+      'The most advanced DStv decoder yet — enjoy 4K streaming, built-in DStv Stream, Netflix, YouTube, and voice search, all in one powerful device.',
+    BookService: 'Request Service'
+  },
+  {
+    image: '../../Images/DSTV-HD-single-View.jpg',
+    PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
+    title: 'DStv HD Single View',
+    description:
+      'A cost-effective HD decoder for single-room viewing — access crystal-clear channels and great entertainment in high definition.',
+    BookService: 'Request Service'
+  },
+  {
+    image: '../../Images/DSTV-Family.jpg',
+    PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
+    title: 'DStv Family',
+    description:
+      'A balanced package with something for everyone — enjoy local favourites, kids shows, music, and general entertainment channels for the whole family.',
+    BookService: 'Request Service'
+  },
+  {
+    image: '../../Images/DSTV-Streama.jpg',
+    PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
+    title: 'DStv Streama',
+    description:
+      'A smart streaming device that turns your TV into a smart TV — stream DStv, Netflix, YouTube, and more in one place without needing a satellite dish.',
+    BookService: 'Request Service'
+  },
+  {
+    image: '../../Images/DSTV-compact-plus.jpg',
+    PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
+    title: 'DStv Compact Plus',
+    description:
+      'Upgrade your viewing with premium sports, international series, and movie channels — perfect for sports lovers and movie fans who want a bit more variety.',
+    BookService: 'Request Service'
+  }
+];
 
-    // Clear existing content
+    
+
+    // Clear any existing content (optional)
     servicesRoot.innerHTML = '';
 
     services.forEach(service => {
         const serviceDiv = document.createElement('div');
-        serviceDiv.className = 'CCTV-item';
+        serviceDiv.className = 'DSTV-item';
 
         serviceDiv.innerHTML = `
             <img src="${service.image}" alt="${service.title}">
@@ -96,4 +98,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         servicesRoot.appendChild(serviceDiv);
     });
+
+
 });

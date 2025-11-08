@@ -1,66 +1,38 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const servicesRoot = document.getElementById('servicesRoot');
-    if (!servicesRoot) return;
+    
+    
 
-    const services = [
-        {
-            image: '../../Images/DSTV-image.jpg',
-            PageUrl: '../Service-pages/DSTV-page.html',
-            title: 'DSTV Installation',
-            description: 'DSTV installation and maintenance including dish alignment, signal testing, and troubleshooting.',
-            BookService: 'Request Service'
-        },
-        {
-            image: '../../Images/CCTV-Image.png',
-            PageUrl: '../Service-pages/CCTV-page.html',
-            title: 'CCTV Installation',
-            description: 'CCTV installation and maintenance services for residential and commercial properties.',
-            BookService: 'Request Service'
-        },
-        {
-            image: '../../Images/Alarm-Image.png',
-            PageUrl: '../Service-pages/Alarm-page.html',
-            title: 'Alarm Installation',
-            description: 'Alarm installation and monitoring services for residential and commercial properties.',
-            BookService: 'Request Service'
-        },
-        {
-            image: '../../Images/Wifi-Image.png',
-            PageUrl: '../Service-pages/Wifi-page.html',
-            title: 'Wifi Installation',
-            description: 'Professional wifi installation and optimization services for homes and businesses.',
-            BookService: 'Request Service'
-        },
-        {
-            image: '../../Images/Surround-Sound.png',
-            PageUrl: '../Service-pages/SoundSystem-page.html',
-            title: 'Surround Sound Installation',
-            description: 'Custom surround sound system installation for an immersive audio experience.',
-            BookService: 'Request Service'
-        }
-    ];
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      newsContainer.innerHTML = ""; // Clear "Loading..." text
 
-    // Clear any existing content (optional)
-    servicesRoot.innerHTML = '';
+      if (data.results && data.results.length > 0) {
+        data.results.slice(0, 8).forEach(article => {
+          const newsDiv = document.createElement("div");
+          newsDiv.className = "news-card";
 
-    services.forEach(service => {
-        const serviceDiv = document.createElement('div');
-        serviceDiv.className = 'service-item';
+          const imageUrl = article.image_url || "../../Images/DefaultNews.jpg";
 
-        serviceDiv.innerHTML = `
-            <img src="${service.image}" alt="${service.title}">
-            <div>
-                <h3>${service.title}</h3>
-                <p>${service.description}</p>
-                <button class="request-service-btn" onclick="location.href='${service.PageUrl}'">${service.BookService}</button>
-            </div>
-        `;
+          newsDiv.innerHTML = `
+            <img src="${imageUrl}" alt="${article.title}">
+            <h3>${article.title}</h3>
+            <p>${article.description ? article.description.slice(0, 120) + '...' : 'No description available.'}</p>
+            <a href="${article.link}" target="_blank">Read More →</a>
+          `;
 
-        servicesRoot.appendChild(serviceDiv);
+          newsContainer.appendChild(newsDiv);
+        });
+      } else {
+        newsContainer.innerHTML = "<p>No tech news available right now.</p>";
+      }
+    })
+    .catch(error => {
+      console.error("Error fetching news:", error);
+      newsContainer.innerHTML = "<p>Failed to load news. Please try again later.</p>";
     });
 
 
-   
 
 
 });

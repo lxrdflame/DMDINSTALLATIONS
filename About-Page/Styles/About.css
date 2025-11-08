@@ -1,65 +1,78 @@
-.about-grid{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    max-width: 80%;
-    justify-content: center;
-    margin: 100px;
+/* Base Styles - Mobile First */
+.About-container,
+.about-text {
+  margin: 20px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #92bef0 0%, #2b4360 100%);
+  border-radius: 20px;
+  box-shadow: 2px 3px 7px #1d1d1de0, -3px -3px 7px rgba(80, 128, 156, 0.915);
 }
 
-.about-card{
-    background: transparent;
-    width: 300px;
-    padding: 20px;
-    border-radius: 20px;
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 30px;
-         background: linear-gradient(135deg, #92bef0 0%, #2b4360 100%);
-    box-shadow: 2px 3px 7px #1d1d1de0, -3px -3px 7px rgba(80, 128, 156, 0.915);
+.about-hero {
+  margin: 30px 20px;
+  text-align: center;
+}
 
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 100%;
+  justify-content: center;
+  margin: 50px 20px;
+}
+
+.about-card {
+  background: transparent;
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: large;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 15px;
+  background: linear-gradient(135deg, #92bef0 0%, #2b4360 100%);
+  box-shadow: 2px 3px 7px #1d1d1de0, -3px -3px 7px rgba(80, 128, 156, 0.915);
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
-.about-hero{
-    margin: 50px;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
+h4 {
+  font-size: 30px;
+  margin: 0;
+  text-align: center;
 }
 
-.About-container{
-    margin: 100px;
-     background: linear-gradient(135deg, #92bef0 0%, #2b4360 100%);
-     padding: 50px;
-     border-radius: 20px;
-    box-shadow: 2px 3px 7px #1d1d1de0, -3px -3px 7px rgba(80, 128, 156, 0.915);
+/* Image Components */
+.about-image,
+.plugs,
+.heart-hands {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
 }
 
-.about-image img{
-    width: 200px;
-    margin-right: 80px;
-
-    position: absolute;
+.about-image img,
+.plugs img,
+.heart-hands img {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;  /* make them fit perfectly */
+  width: 100%;
   height: 100%;
-  object-fit: contain; /* keep proportions */
-  padding-top: 50px;
+  object-fit: contain;
+  padding-top: 20px;
 }
 
-.about-image{
-    position: relative; /* allows absolute positioning inside */
-  width: 200px;  /* adjust to your image size */
-  height: 200px;
-
+.plugs img,
+.heart-hands img {
+  mix-blend-mode: multiply;
 }
 
-/* When hovering over either image, both glow */
+/* Image Hover Effects */
 .about-image:hover .target-image,
 .about-image:hover .arrow-image {
   filter: drop-shadow(0 0 10px rgb(0, 195, 255));
@@ -67,106 +80,235 @@ h2 {
   cursor: pointer;
 }
 
-h4{
-    font-size: 40px;
-    margin: 0;
-}
-
-
+/* Book Animation Components */
 .container {
-  perspective: 1000px; /* gives depth */
+  perspective: 1000px;
+  margin: 0 auto;
 }
 
 .fold-me {
   transform-style: preserve-3d;
   background: #00bcd4;
-  width: 200px;
-  height: 200px;
-  margin: 100px auto;
+  width: 150px;
+  height: 150px;
+  margin: 50px auto;
 }
 
-.right-page{
-    margin-left: -5px;
-}
-
-.right-page, .left-page{
-    width: 100px;
+.right-page,
+.left-page {
+  width: 75px;
   border: 1px solid #000000;
   position: relative;
   transform-style: preserve-3d;
   backface-visibility: hidden;
   box-shadow: black 0 0 10px;
-  margin-top: 90px;
+  margin-top: 50px;
 }
 
-.book{
-    margin-right: 50px;
+.right-page {
+  margin-left: -5px;
 }
 
-.plugs{
-    margin: 20px;
-    position: relative; /* allows absolute positioning inside */
-  width: 200px;  /* adjust to your image size */
-  height: 200px;
-  margin-top: 20px;
+.book {
+  margin-right: 0;
 }
 
-.plugs img{
-     width: 200px;
-    margin-right: 80px;
-
-    position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;  /* make them fit perfectly */
-  height: 100%;
-  object-fit: contain; /* keep proportions */
-  padding-top: 50px;
-    mix-blend-mode: multiply;
-  
+/* Button Styles */
+.btn-secondary {
+  text-decoration: none;
+  color: #FFFFFF;
+  box-shadow: inset 2px 3px 7px rgb(254, 255, 255), inset -3px -3px 7px rgb(21, 21, 22);
+  padding: 15px 25px;
+  border-radius: 50px;
+  margin: 50px auto 20px;
+  display: block;
+  width: fit-content;
+  text-align: center;
 }
 
-.heart-hands{
-    margin: 20px;
-    position: relative; /* allows absolute positioning inside */
-  width: 200px;  /* adjust to your image size */
-  height: 200px;
-  margin-top: 20px;
+.btn-secondary:hover {
+  box-shadow: inset 2px 3px 7px rgb(0, 0, 0), inset -3px -3px 7px rgb(255, 255, 255);
 }
 
-.heart-hands img{
-    width: 200px;
-    margin-right: 80px;
-
-    position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;  /* make them fit perfectly */
-  height: 100%;
-  object-fit: contain; /* keep proportions */
-  padding-top: 50px;
-    mix-blend-mode: multiply;
-}
-
-.about-text {
+/* Tablet Styles */
+@media (min-width: 768px) {
+  .About-container,
+  .about-text {
     margin: 50px;
-     background: linear-gradient(135deg, #92bef0 0%, #2b4360 100%);
-     padding: 50px;
-     border-radius: 20px;
-    box-shadow: 2px 3px 7px #1d1d1de0, -3px -3px 7px rgba(80, 128, 156, 0.915);
+    padding: 40px;
+  }
+
+  .about-hero {
+    margin: 50px;
+  }
+
+  .about-grid {
+    margin: 80px 50px;
+    gap: 40px;
+  }
+
+  .about-card {
+    width: calc(50% - 60px);
+    margin: 20px;
+  }
+
+  h4 {
+    font-size: 35px;
+  }
+
+  .about-image,
+  .plugs,
+  .heart-hands {
+    width: 180px;
+    height: 180px;
+  }
+
+  .fold-me {
+    width: 180px;
+    height: 180px;
+  }
+
+  .right-page,
+  .left-page {
+    width: 90px;
+  }
+
+  .btn-secondary {
+    margin-left: auto;
+    margin-right: 50px;
+  }
 }
 
-.btn-secondary{
-    text-decoration: none;
-    color: #FFFFFF;
-    box-shadow: inset 2px 3px 7px rgb(254, 255, 255), inset -3px -3px 7px rgb(21, 21, 22);
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .About-container,
+  .about-text {
+    margin: 100px;
+    padding: 50px;
+  }
+
+  .about-grid {
+    max-width: 80%;
+    margin: 100px auto;
+    gap: 50px;
+  }
+
+  .about-card {
+    width: 300px;
+    margin: 30px;
+  }
+
+  h4 {
+    font-size: 40px;
+  }
+
+  .about-image,
+  .plugs,
+  .heart-hands {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-image img,
+  .plugs img,
+  .heart-hands img {
+    padding-top: 50px;
+  }
+
+  .fold-me {
+    width: 200px;
+    height: 200px;
+    margin: 100px auto;
+  }
+
+  .right-page,
+  .left-page {
+    width: 100px;
+    margin-top: 90px;
+  }
+
+  .book {
+    margin-right: 50px;
+  }
+
+  .btn-secondary {
+    margin-left: 1000px;
+    margin-right: 0;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+  .about-grid {
+    max-width: 70%;
+  }
+
+  .About-container,
+  .about-text {
+    margin: 100px auto;
+    max-width: 1200px;
+  }
+}
+
+/* Small Mobile Adjustments */
+@media (max-width: 480px) {
+  .About-container,
+  .about-text {
+    margin: 15px;
+    padding: 20px 15px;
+  }
+
+  .about-hero {
+    margin: 20px 15px;
+  }
+
+  .about-grid {
+    margin: 30px 15px;
+    gap: 20px;
+  }
+
+  .about-card {
+    margin: 10px;
     padding: 15px;
-    border-radius: 50px;
-    margin-top: 50px;
-    margin-left: 1000px ;   
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  .about-image,
+  .plugs,
+  .heart-hands {
+    width: 120px;
+    height: 120px;
+  }
+
+  .fold-me {
+    width: 120px;
+    height: 120px;
+    margin: 30px auto;
+  }
+
+  .right-page,
+  .left-page {
+    width: 60px;
+    margin-top: 30px;
+  }
+
+  .btn-secondary {
+    padding: 12px 20px;
+    margin-top: 30px;
+  }
 }
 
-.btn-secondary:hover{
-    box-shadow: inset 2px 3px 7px rgb(0, 0, 0), inset -3px -3px 7px rgb(255, 255, 255);
-
+/* Fix for very small screens */
+@media (max-width: 320px) {
+  .about-card {
+    margin: 5px;
+    padding: 10px;
+  }
+  
+  .about-grid {
+    gap: 15px;
+  }
 }
