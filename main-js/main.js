@@ -3,15 +3,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const root = document.getElementById("nav-root");
     if (!root) return;
 
-    // Detect base path dynamically (so it works anywhere)
-    const pathParts = window.location.pathname.split("/");
-    const projectIndex = pathParts.indexOf("DMDINSTALLATIONS");
-    const basePath =
-      projectIndex !== -1
-        ? "/" + pathParts.slice(0, projectIndex + 1).join("/")
-        : "";
+    // Simple path resolution that works for both local and GitHub Pages
+    const getBasePath = () => {
+      const currentPath = window.location.pathname;
+      const repoName = 'DMDINSTALLATIONS'; // Change this to your actual repo name
+      
+      // Check if we're on GitHub Pages with repository name in URL
+      if (currentPath.includes(repoName)) {
+        return `/${repoName}`;
+      }
+      // For custom domain or local development
+      return '';
+    };
 
-    const resolvePath = (relative) => `${basePath}${relative}`;
+    const basePath = getBasePath();
+    const resolvePath = (relative) => {
+      // Remove leading slash if basePath is empty to make it relative
+      if (basePath === '' && relative.startsWith('/')) {
+        return relative.substring(1);
+      }
+      return `${basePath}${relative}`;
+    };
 
     // --- Create Navbar ---
     const nav = document.createElement("nav");
@@ -62,10 +74,14 @@ document.addEventListener("DOMContentLoaded", function () {
     root.appendChild(nav);
 
     // --- Highlight current page ---
-    const currentFile = window.location.pathname.split("/").pop() || "index.html";
+    const currentPath = window.location.pathname;
     nav.querySelectorAll(".nav-link").forEach((link) => {
-      const linkFile = link.getAttribute("href").split("/").pop();
-      if (linkFile === currentFile) {
+      const linkHref = link.getAttribute("href");
+      // Compare paths for active page highlighting
+      if (currentPath.endsWith(linkHref) || 
+          (currentPath === '/' && linkHref.endsWith('/index.html')) ||
+          (currentPath === basePath + '/' && linkHref.endsWith('/index.html')) ||
+          (currentPath.endsWith('/') && linkHref.endsWith('/index.html'))) {
         link.classList.add("active");
         Object.assign(link.style, {
           pointerEvents: "none",
@@ -86,37 +102,42 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileOverlay = document.querySelector(".mobile-overlay");
   const body = document.body;
 
-  hamburger?.addEventListener("click", function () {
-    this.classList.toggle("active");
-    navList.classList.toggle("active");
-    mobileOverlay.classList.toggle("active");
-    body.classList.toggle("menu-open");
-  });
+  // Initialize hamburger menu functionality
+  if (hamburger && navList && mobileOverlay) {
+    hamburger.addEventListener("click", function () {
+      this.classList.toggle("active");
+      navList.classList.toggle("active");
+      mobileOverlay.classList.toggle("active");
+      body.classList.toggle("menu-open");
+    });
 
-  mobileOverlay?.addEventListener("click", function () {
-    hamburger.classList.remove("active");
-    navList.classList.remove("active");
-    this.classList.remove("active");
-    body.classList.remove("menu-open");
-  });
-
-  document.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
+    mobileOverlay.addEventListener("click", function () {
       hamburger.classList.remove("active");
       navList.classList.remove("active");
-      mobileOverlay.classList.remove("active");
+      this.classList.remove("active");
       body.classList.remove("menu-open");
     });
-  });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      hamburger.classList.remove("active");
-      navList.classList.remove("active");
-      mobileOverlay.classList.remove("active");
-      body.classList.remove("menu-open");
-    }
-  });
+    // Close menu when clicking on nav links
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navList.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        body.classList.remove("menu-open");
+      });
+    });
+
+    // Close menu on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        hamburger.classList.remove("active");
+        navList.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        body.classList.remove("menu-open");
+      }
+    });
+  }
 
   // --- Back to Top Button ---
   const backToTopBtn = document.createElement("button");
@@ -126,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
   backToTopBtn.setAttribute("aria-label", "Back to top");
   document.body.appendChild(backToTopBtn);
 
+  // Show/hide back to top button based on scroll position
   window.addEventListener("scroll", function () {
     if (window.pageYOffset > 300) {
       backToTopBtn.classList.add("show");
@@ -134,7 +156,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Smooth scroll to top when button is clicked
   backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ 
+      top: 0, 
+      behavior: "smooth" 
+    });
+  });
+
+  // Keyboard accessibility for back to top button
+  backToTopBtn.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      window.scrollTo({ 
+        top: 0, 
+        behavior: "smooth" 
+      });
+    }
   });
 });
