@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- Brand Logo ---
     const brand = document.createElement("a");
     brand.className = "brand";
-    brand.href = "../../index.html"; // link to home
+    brand.href = "/DMDINSTALLATIONS/index.html"; // link to home
 
     const img = document.createElement("img");
-    img.src = "../../Images/INSTALLATIONS-2.png";
+    img.src = "/DMDINSTALLATIONS/Images/INSTALLATIONS-2.png";
     img.alt = "DMD INSTALLATIONS";
     img.className = "logo";
     brand.appendChild(img);
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- Service Button ---
     const servicebtn = document.createElement("a");
     servicebtn.className = "service-btn";
-    servicebtn.href = "../../Booking-Page/HTML/Booking-Page.html";
+    servicebtn.href = "/DMDINSTALLATIONS/Booking-Page/HTML/Booking-Page.html";
     servicebtn.textContent = "Request Service";
     nav.appendChild(servicebtn);
 
@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ul.className = "nav-list";
 
     const items = [
-      { text: "Home", href: "../../index.html" },
-      { text: "Services", href: "../../Services-Page/HTML/Services.html" },
-      { text: "About", href: "../../About-Page/HTML/About.html" },
-      { text: "Contact", href: "../../Booking-Page/HTML/Booking-Page.html" },
+      { text: "Home", href: "/DMDINSTALLATIONS/index.html" },
+      { text: "Services", href: "/DMDINSTALLATIONS/Services-Page/HTML/Services.html" },
+      { text: "About", href: "/DMDINSTALLATIONS/About-Page/HTML/About.html" },
+      { text: "Contact", href: "/DMDINSTALLATIONS/Booking-Page/HTML/Booking-Page.html" },
     ];
 
     items.forEach((it) => {
@@ -107,5 +107,30 @@ document.addEventListener('keydown', function(e) {
         body.classList.remove('menu-open');
     }
 });
+
+ // Create button
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.id = 'backToTop';
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.innerHTML = '↑';
+    backToTopBtn.setAttribute('aria-label', 'Back to top');
+    document.body.appendChild(backToTopBtn);
+    
+    // Show/hide logic
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    
+    // Click handler
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
 });
