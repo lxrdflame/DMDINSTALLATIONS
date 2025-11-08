@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         SideBarToggle.addEventListener('click', () => {
            if (!isSidebarOpen)
            {
+            console.log("Clicked");
                 isSidebarOpen = true;
                 gsap.to(".sidebar", {x: 0, duration: 1 });
            }

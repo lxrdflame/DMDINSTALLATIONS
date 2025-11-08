@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const services = [
         {
-            image: '../../Images/Alarm-Wireless.jpg',
+            image: '../../Images/Alarm-Wireless.png',
             PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
             title: 'Wireless Alarm System',
             description:
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
             BookService: 'Request Installation'
         },
         {
-            image: '../../Images/Alarm-MotionSensor.jpg',
+            image: '../../Images/Alarm-MotionSensor.png',
             PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
             title: 'Motion Sensor Alarm',
             description:
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             BookService: 'Request Installation'
         },
         {
-            image: '../../Images/Alarm-GSM.jpg',
+            image: '../../Images/Alarm-GSM.jpeg',
             PageUrl: '../../Booking-Page/HTML/Booking-Page.html',
             title: 'GSM Alarm System',
             description:
