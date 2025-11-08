@@ -12,6 +12,20 @@ nav {
     z-index: 99999;
 }
 
+.hamburger{
+    padding: 2px;
+    border-radius: 50px;
+    font-size: 30px;
+    
+}
+
+.hamburger span{
+    margin-top: 5px;
+    font-size: 50px;
+    padding: 2px 5px;
+    height: 20px;
+}
+
 nav ul {
     list-style: none;
     margin-top: 20px;
@@ -248,13 +262,18 @@ button:hover {
         transform: translateX(10px);
     }
 
+    /* FIXED: Service button positioning for mobile */
     .service-btn {
         position: relative;
-        right: -600px;
+        right: auto;
         top: auto;
-        margin: 20px 0;
-        width: 15%;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 200px;
         text-align: center;
+        display: block;
+        left: auto;
+        transform: none;
     }
 
     /* Adjust logo for mobile */
@@ -281,6 +300,11 @@ button:hover {
     .nav-link {
         font-size: 20px;
         padding: 18px 25px;
+    }
+
+    .service-btn {
+        width: 70%;
+        max-width: 180px;
     }
 }
 
@@ -311,6 +335,14 @@ button:hover {
     .nav-link {
         font-size: 16px;
         padding: 12px 15px;
+    }
+
+    .service-btn {
+        width: 85%;
+        max-width: 220px;
+        margin: 15px auto;
+        padding: 12px 20px;
+        font-size: 16px;
     }
 
     .Page-Heading {
@@ -354,6 +386,14 @@ button:hover {
     .nav-link {
         font-size: 15px;
         padding: 10px 12px;
+    }
+
+    .service-btn {
+        width: 90%;
+        max-width: 200px;
+        margin: 10px auto;
+        padding: 10px 18px;
+        font-size: 14px;
     }
 
     .Page-Heading {
