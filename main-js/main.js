@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     brand.href = resolvePath("/index.html");
 
     const img = document.createElement("img");
-    img.src = resolvePath("/Images/INSTALLATIONS-2.png");
+    img.src = resolvePath("/Images/DMD-Logo.png");
     img.alt = "DMD INSTALLATIONS";
     img.className = "logo";
     brand.appendChild(img);
