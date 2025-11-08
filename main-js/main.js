@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     brand.href = getRelativePath("index.html");
 
     const img = document.createElement("img");
-    img.src = getRelativePath("Images/INSTALLATIONS-2.png");
+    img.src = getRelativePath("Images/DMD-Logo.png");
     img.alt = "DMD INSTALLATIONS";
     img.className = "logo";
     brand.appendChild(img);
