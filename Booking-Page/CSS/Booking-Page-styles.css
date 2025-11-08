@@ -12,18 +12,19 @@
     width: 100%;
     margin: 30px auto;
     padding: 0 15px;
+    box-sizing: border-box; /* Add this */
 }
 
 form {
     width: 100%;
     padding: 30px 20px;
-    display: grid;
-    grid-template-columns: 1fr;
+    display: block; /* Change from grid to block */
     gap: 25px;
     font-size: 1rem;
     align-content: center;
     justify-content: center;
     margin: auto;
+    box-sizing: border-box; /* Add this */
 }
 
 .service-form {
@@ -35,6 +36,7 @@ form {
     margin: 30px auto;
     box-shadow: 0 0 15px #000000b0;
     order: 2;
+    box-sizing: border-box; /* Add this */
 }
 
 .contact-group {
@@ -48,6 +50,7 @@ form {
     box-shadow: 0 0 15px #000000b0;
     margin: 0 auto;
     order: 1;
+    box-sizing: border-box; /* Add this */
 }
 
 .line {
@@ -135,6 +138,7 @@ textarea {
     z-index: 999999;
     text-align: center;
     box-shadow: inset 3px 3px 7px #012545d5, inset -3px -3px 7px rgba(161, 207, 244, 0.449);
+    box-sizing: border-box; /* Add this */
 }
 
 /* Tablet Styles */
@@ -156,18 +160,20 @@ textarea {
         padding: 40px 30px;
         gap: 30px;
         font-size: 1.1rem;
+        display: grid; /* Keep grid only for tablet+ */
+        grid-template-columns: 1fr; /* Single column for tablet */
     }
 
     .service-form {
-        max-width: 45%;
-        margin: 0;
+        max-width: 100%; /* Full width on tablet */
+        margin: 0 auto;
         padding: 30px 25px;
         order: 1;
     }
 
     .contact-group {
-        max-width: 45%;
-        margin: 0;
+        max-width: 100%; /* Full width on tablet */
+        margin: 0 auto;
         padding: 30px 25px;
         order: 2;
     }
@@ -199,7 +205,7 @@ textarea {
     }
 
     form {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Two columns only on desktop */
         gap: 40px;
         padding: 60px;
         max-width: 1200px;
@@ -207,16 +213,16 @@ textarea {
 
     .service-form {
         max-width: 500px;
-        margin-right: 50px;
-        margin-top: 50px;
+        margin-right: 0; /* Remove right margin */
+        margin-top: 0; /* Remove top margin */
         padding: 30px;
     }
 
     .contact-group {
         max-width: 500px;
         height: 500px;
-        margin-left: auto;
-        margin-top: -30px;
+        margin-left: 0; /* Remove left margin */
+        margin-top: 0; /* Remove negative margin */
         padding: 25px;
     }
 
@@ -225,17 +231,17 @@ textarea {
     }
 
     .sendButton {
-        margin-left: 180px;
-        margin-top: 50px;
+        margin-left: 0; /* Remove left margin */
+        margin: 50px 0 0 0; /* Adjust margin */
         width: 100px;
     }
 
     .booking-heading {
         width: 200px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 100px;
-        margin-bottom: -50px;
+        margin: 100px auto -50px; /* Center it */
+        position: relative; /* Change from absolute positioning */
+        left: auto;
+        right: auto;
     }
 
     #social-media-icon {
@@ -256,8 +262,8 @@ textarea {
     }
 
     .booking-heading {
-        margin-left: 950px;
-        margin-right: 0;
+        margin-left: auto; /* Center instead of fixed position */
+        margin-right: auto;
     }
 }
 
@@ -281,6 +287,7 @@ textarea {
     .service-form,
     .contact-group {
         padding: 20px 15px;
+        margin: 0 auto; /* Ensure centered */
     }
 
     input, textarea, button {
