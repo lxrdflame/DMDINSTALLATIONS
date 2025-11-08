@@ -148,3 +148,25 @@ h4{
     mix-blend-mode: multiply;
 }
 
+.about-text {
+    margin: 50px;
+     background: linear-gradient(135deg, #92bef0 0%, #2b4360 100%);
+     padding: 50px;
+     border-radius: 20px;
+    box-shadow: 2px 3px 7px #1d1d1de0, -3px -3px 7px rgba(80, 128, 156, 0.915);
+}
+
+.btn-secondary{
+    text-decoration: none;
+    color: #FFFFFF;
+    box-shadow: inset 2px 3px 7px rgb(254, 255, 255), inset -3px -3px 7px rgb(21, 21, 22);
+    padding: 15px;
+    border-radius: 50px;
+    margin-top: 50px;
+    margin-left: 1000px ;   
+}
+
+.btn-secondary:hover{
+    box-shadow: inset 2px 3px 7px rgb(0, 0, 0), inset -3px -3px 7px rgb(255, 255, 255);
+
+}

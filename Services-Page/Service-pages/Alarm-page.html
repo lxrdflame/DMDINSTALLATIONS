@@ -10,7 +10,9 @@
     <script src="../../main-js/main.js"></script>
     <link rel="stylesheet" href="../../main-css/main-styles.css">
     <link rel="stylesheet" href="../../Services-Page/CSS/Service-secondary-style.css">
-
+    <link rel="stylesheet" href="../Services-Styles/AlarmSystems.css">
+    <script src="../Service-Scripts/AlarmSystem.js"></script>
+    <script src="../Scripts/Services-Main.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -20,10 +22,33 @@
     </div>
     <div id="nav-root"></div>
    </header>
+   
    <div class="Page-Heading"><h1>Alarm Services</h1></div>
+    <div class="sidebar">
+        <aside class="services-nav-aside" aria-label="Services Navigation">
+
+        <button class="toggle-sidebar-btn">&#9776;</button>
+        <ul>
+            <li><h2>Services</h2></li>
+            <li><hr></li>
+            <li><a href="../Service-page/DSTV-page.html">DSTV Installation</a></li>
+            <li><hr></li>
+            <li><a href="../Service-page/CCTV-page.html">CCTV Installation</a></li>
+            <li><hr></li>
+            <li><a href="../Service-page/Alarm-page.html">Wi-Fi Services</a></li>
+            <li><hr></li>
+            <li><a href="../Service-page/Alarm-page.html">Alarm Services</a></li>
+            <li><hr></li>
+            <li><a href="../Service-page/SoundSystem-page.html">Sound Systems</a></li>
+            <li><hr></li>
+        </ul>
+       </aside>
+       </div>
    <div class="Contact-icon">
     <img src="../../Images/Contact-Icon.png" alt="Contact-Icon" class="Contact-icon-image">
 </div>
+      <div id="AlarmsRoot" class="Alarms-container" aria-live="polite"></div>
     
+
 </body>
 </html>
