@@ -2,61 +2,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  const arrow = document.querySelector(".arrow-image");
+const arrow = document.querySelector(".arrow-image");
 
- gsap.registerPlugin(ScrollTrigger);
+// Register plugins
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
- gsap.set(".arrow-image", {x:800 , y: -500})
+// Set initial position
+gsap.set(".arrow-image", { x: 800, y: -500 });
+
+// Create motion path - this replicates your original movement
+const motionPath = [
+  { x: 800, y: -500 },
+  {x: 900, y: -400},
+  {x: 900, y: -450},
+  { x: 0, y: 0 }       // End position (same as your gsap.to)
+];
+
+// Scroll-triggered motion path animation
 gsap.to(".arrow-image", {
-  x: 0,          
-  y: 0,         
+  motionPath: {
+    path: motionPath,
+    align: ".arrow-image",
+    alignOrigin: [0.5, 0.5]
+  },
   duration: 1,
-  delay:1,
   ease: "none",
   scrollTrigger: {
     trigger: ".arrow-image",
-    start: "bottom bottom",   // 🔹 when arrow’s center hits viewport center
-    end: "bottom top",        // when it scrolls out of view
-    scrub: true,              // smooth scroll link
-    markers: false,           // set true for testing
-  }
-});
-
-  function arrowShoot()
-  {
-     gsap.from(".arrow-image", { x: 800, y: -900, duration: 0.5 });
-    gsap.to(".arrow-image", { x: 0, duration: 0.5 });
-  }
-
-   
-  arrow.addEventListener('click', arrowShoot);
-
-// Start with the pages folded
-gsap.set(".right-page", {
-  rotateY: 0,
-  transformOrigin: "left center"
-});
-
-gsap.set(".left-page", {
-  rotateY: 0,
-  transformOrigin: "right center"
-});
-
-// Start pages folded
-gsap.set(".right-page", { rotateY: -90, transformOrigin: "left center" });
-gsap.set(".left-page", { rotateY: 90, transformOrigin: "right center" });
-
-// Animate unfolding as scrolls through the section
-gsap.to(".right-page", {
-  rotateY: 0,
-  duration: 1,
-  ease: "power2.inOut",
-  scrollTrigger: {
-    trigger: ".book",
-    start: "top center",    // when the top of book hits center
-    end: "bottom center",   // until the bottom of book reaches center
-    scrub: true,            // ties animation to scroll position
-    markers: false
+    start: "bottom bottom",
+    end: "bottom top",
+    scrub: true,
+    markers: false,
   }
 });
 
